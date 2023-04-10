@@ -49,6 +49,8 @@ function errHandler(err, req, res, next) {
     }
 }
 product_route.use(errHandler);
+
+
 // const storage = multer.diskStorage({
 //     destination : function(req,file,cb){
 //         cb(null,path.join(__dirname, "../upload/images"),function(err,success){
@@ -68,8 +70,6 @@ product_route.use(errHandler);
 //         },
 //     }) 
 // const upload = multer({storage:storage});
-
-// const auth = require("../middleware/auth");
 
 const product_controller = require("../usercontrol/productcontroller")
 const { diskStorage } = require("multer");

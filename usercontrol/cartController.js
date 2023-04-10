@@ -9,7 +9,7 @@ const add_to_cart = async(req,res)=>{
             productId : req.body.productId,
             ProductName : req.body.ProductName,
             Price : req.body.Price,
-            Title : req.body.Title,
+            title : req.body.title,
             Description : req.body.Description,
 
         });

@@ -21,6 +21,6 @@ app.use('/api', list_route);
 //app.use('./api', producttable_route)
 
 app.listen(8000, function(){
-    console.log("connection successful");               
+    console.log("connection successful and running ");               
     }
 )

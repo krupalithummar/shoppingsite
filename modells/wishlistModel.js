@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const mongodb = require("mongodb");
+
 
 const WishlistSchema = new mongoose.Schema({
     userId: { type : String, required: true },

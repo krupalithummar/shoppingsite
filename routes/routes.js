@@ -89,9 +89,9 @@ app.delete("/users/:id", async (req, res) => {
 
 
  //const port = process.env.PORT || 4000;
- //const bodyParser = require("body-parser");
- //user_route.use(bodyParser.json());
-// user_route.use(bodyParser.urlencoded({extended:true}));
+ const bodyParser = require("body-parser");
+ user_route.use(bodyParser.json());
+user_route.use(bodyParser.urlencoded({extended:true}));
 
  
 

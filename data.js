@@ -10,7 +10,7 @@ app.use(express.json());
 
 //add the data
  app.post("/users", (req, res) => {
-   console.log(req.body);
+  // console.log(req.body);
    const user = new Student(req.body);
    user.save().then(() => {
       res.status(201).send(user);
@@ -27,7 +27,7 @@ app.get("/users", async (req,res) => {
    
     const usersData = await User.find()
       res.send(usersData);
-      console.log(usersData)
+      //console.log(usersData)
 
    }catch(e){res.send(e)}
 })

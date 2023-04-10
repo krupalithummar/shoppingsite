@@ -1,6 +1,6 @@
-const  user = require("../modells/userModel");
+const  User = require("../modells/userModel");
 //const  user = require("../producttable/userRole");
-/*const bcryptjs = require("bcryptjs");
+const bcryptjs = require("bcryptjs");
 
 const securepassword = async(password)=> {
     try{
@@ -13,7 +13,7 @@ const securepassword = async(password)=> {
         res.status(400).send(error.message);  
     }
  }
-*/
+
 
  const user_list = async(req,res)=>{
    
@@ -28,15 +28,15 @@ const securepassword = async(password)=> {
 
 const register_user = async(req,res)=>{
     try{
-      
-        const userData = await user.findOne({email:req.body.email});
+        const email = req.body.email
+        const userData = await User.findOne({email:email});
         if(userData){
-            res.send(userData)
-            res.status(200).send({flag:false, msg: "this message is already exits"});    
+            //res.send(userData)
+            res.status(200).send({success:false, msg: "this message is already exits"});    
         }
         else{
             //const user_data = await User.save();
-            res.status(200).send({flag:true,msg : "you have registered successfully" });    
+            res.status(200).send({success:true,msg : "you have registered successfully" });    
         }
             
     }catch(error){

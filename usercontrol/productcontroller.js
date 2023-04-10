@@ -26,8 +26,8 @@ const producttable = async(req,res)=>{
 
       var arrImages = [];
         if (req.files && req.files.length) {
-  for (let i = 0; i < req.files.length; i++) {
-    arrImages[i] = {
+     for (let i = 0; i < req.files.length; i++) {
+      arrImages[i] = {
       file: req.files[i],
       filename: req.filename
     };
@@ -36,13 +36,13 @@ const producttable = async(req,res)=>{
   console.log('No files were uploaded.');
 }
       
-// 
-//       var arrImages = [];
-//       for(let i=0;i < req.file.length; i ++){
-//         arrImages[i] = req.files[i],req.filename;
 
-//       };
-//   
+      var arrImages = [];
+      for(let i=0;i < req.file.length; i ++){
+        arrImages[i] = req.files[i],req.filename;
+
+      };
+  
         const product_obj = new Product({
           
            // user_id : req.body.user_id,
@@ -91,7 +91,7 @@ const getproduct = async (req, res) => {
 }
 
 // UPDATE
-const updatedata =async (req, res) => {
+const updatedata = async (req, res) => {
   try {
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
@@ -113,20 +113,6 @@ module.exports = {
 }
 
 /*
-//DELETE
-router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
-  try {
-    await Product.findByIdAndDelete(req.params.id);
-    res.status(200).json("Product has been deleted...");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
-
-
-
 //GET PRODUCT
 router.get("/find/:id", async (req, res) => {
   try {

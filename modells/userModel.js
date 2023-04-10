@@ -18,12 +18,12 @@ const user = mongoose.Schema({
         type :String,
             required : true, 
             unique: [true, "email id already present "],
-            // validate(value){
-            //     if(!validator.isEmail(value)){
-            //         throw new error("invalid email");
-            //     }
+            validate(value){
+                if(!validator.isEmail(value)){
+                    throw new error("invalid email");
+                }
                 
-            // }
+            }
         },
     
 

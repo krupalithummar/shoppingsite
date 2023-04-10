@@ -111,19 +111,19 @@ const getAllProduct = asyncHandler(async (req, res) => {
     }
   });
 
-  // const addtocart = asyncHandler(async(req,res)=>{
-  //   const id = req.body;
-  //   const userid = req.body;
-  //   try{
-  //     const user = await user.findById(id);
-  //     const alreadyadded = user.Product
-  //   }catch(err){
-  //     res.send(err.message)
+  const addtocart = asyncHandler(async(req,res)=>{
+    const id = req.body;
+    const userid = req.body;
+    try{
+      const user = await user.findById(id);
+      const alreadyadded = user.Product
+    }catch(err){
+      res.send(err.message)
 
-  //   }
+    }
 
 
-  // })
+  })
 
 
   const addToWishlist = asyncHandler(async (req, res) => {
